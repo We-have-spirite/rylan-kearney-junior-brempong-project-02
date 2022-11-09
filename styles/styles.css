@@ -250,14 +250,94 @@ h1, h2 {
 }
 
 header {
-  background-image: url(../assets/spiritesHeaderImage.jpg);
+  background-image: url(../assets/spiritesHeaderImageEdit.jpg);
   height: 100vh;
   background-size: cover;
   background-position: center;
-  opacity: 0.8;
   padding: 50px 50px 100px 50px;
 }
 
 header .imgContainer {
-  width: 12%;
+  width: 8%;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+header {
+  padding-left: 65px;
+}
+header .textContainer {
+  width: 50%;
+}
+header img {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+header h1 {
+  font-family: "Satisfy", cursive;
+  font-size: 7.5rem;
+  margin-bottom: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+header h2 {
+  font-family: "Signika", sans-serif;
+  font-size: 2.5rem;
+  color: #ff3333;
+  text-shadow: -2px -2px 0 white;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+header .ulElement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header .ulElement ul {
+  list-style: none;
+}
+header .ulElement li {
+  text-decoration: none;
+  list-style: none;
+  margin-right: 25px;
+  margin-top: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+header .ulElement li a {
+  color: white;
+  font-size: 1.25rem;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.greenButton {
+  background-color: #009933;
+  border-radius: 8px;
+}
+
+.redButton {
+  background-color: #ff3333;
+  border-radius: 5px;
+}
+
+header h1:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+header h2:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+header li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+header img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
