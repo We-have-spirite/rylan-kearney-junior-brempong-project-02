@@ -251,10 +251,14 @@ h1, h2 {
 
 header {
   background-image: url(../assets/spiritesHeaderImageEdit.jpg);
-  height: 100vh;
   background-size: cover;
   background-position: center;
   padding: 50px 50px 100px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 header .imgContainer {
@@ -302,7 +306,7 @@ header .ulElement li {
   text-decoration: none;
   list-style: none;
   margin-right: 25px;
-  margin-top: 80px;
+  margin-top: 15px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -340,4 +344,21 @@ header li:hover {
 header img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.formPage {
+  height: 100vh;
+  background: rgb(12, 247, 51);
+  background: linear-gradient(249deg, rgba(12, 247, 51, 0.9948179956) 0%, rgb(219, 37, 37) 25%, rgb(30, 198, 57) 49%, rgb(219, 37, 37) 75%, rgb(12, 247, 51) 100%);
+}
+
+footer {
+  background-color: #ff3333;
+  text-align: center;
+  height: 25px;
+}
+footer p {
+  margin: 0;
+  color: white;
+  font-weight: 700;
 }
