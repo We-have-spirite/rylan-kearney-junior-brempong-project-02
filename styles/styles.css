@@ -257,10 +257,10 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
 header .imgContainer {
   width: 8%;
   -webkit-transition: all 0.2s ease-in-out;
@@ -277,11 +277,12 @@ header img {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border-radius: 8px;
+  width: 140%;
 }
-
 header h1 {
   font-family: "Satisfy", cursive;
   font-size: 7.5rem;
+  margin-top: 20px;
   margin-bottom: 0;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -294,10 +295,12 @@ header h2 {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+
 header .ulElement {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 15px;
 }
 header .ulElement ul {
   list-style: none;
@@ -306,11 +309,11 @@ header .ulElement li {
   text-decoration: none;
   list-style: none;
   margin-right: 25px;
-  margin-top: 15px;
+  margin-top: 30px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-header .ulElement li a {
+header .ulElement a {
   color: white;
   font-size: 1.25rem;
   font-family: "Source Sans Pro", sans-serif;
@@ -333,14 +336,17 @@ header h1:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
 header h2:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
 header li:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
 header img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -361,4 +367,5 @@ footer p {
   margin: 0;
   color: white;
   font-weight: 700;
+  font-family: "Signika", sans-serif;
 }
