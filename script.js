@@ -14,3 +14,10 @@
 // b: display those results to the page
     // b(a):add all the content we have dynamicallly created to the ul through its id name which already exists in the html
 
+    document.querySelector("#find").addEventListener("click", function(){
+        document.querySelector(".menu").classList.add("active");
+    });
+    
+    document.querySelector(".menu .close-button").addEventListener("click", function(){
+        document.querySelector(".menu").classList.remove("active");
+    });

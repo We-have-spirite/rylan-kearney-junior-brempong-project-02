@@ -18,7 +18,7 @@
 
 .menu {
     position: absolute;
-    top: -150%;
+    bottom: -150%;
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
@@ -45,8 +45,8 @@
     }
 }
 
-.menu:active {
-    top: 50%;
+.menu.active {
+    bottom: -60%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     transition: top 0ms ease-in-out 0ms,
@@ -60,6 +60,7 @@
         text-align: center;
         margin: 10px 0px 20px;
         font-size: 25px;
+        color: #d60c0c;
     }
 }
 
