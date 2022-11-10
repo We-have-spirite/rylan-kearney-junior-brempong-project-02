@@ -352,10 +352,15 @@ header img:hover {
           transform: scale(1.1);
 }
 
-.formPage {
+.pop-up-form {
   height: 100vh;
   background: rgb(12, 247, 51);
   background: linear-gradient(249deg, rgba(12, 247, 51, 0.9948179956) 0%, rgb(219, 37, 37) 25%, rgb(30, 198, 57) 49%, rgb(219, 37, 37) 75%, rgb(12, 247, 51) 100%);
+}
+
+.pop-up-form {
+  margin: 0px;
+  padding: 0px;
 }
 
 footer {
