@@ -1,0 +1,92 @@
+@use "./variables";
+
+h1, h2 {
+    color: white;
+  }
+  
+  header {
+    background-image: url(../assets/spiritesHeaderImageEdit.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px 50px 100px 50px;
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    .imgContainer {
+        width: 8%;
+        transition: all 0.2s ease-in-out;
+  }  
+  }
+  
+  header {
+    padding-left: 65px;
+    .textContainer {
+      width: 50%;
+    }
+    img {
+      transition: all 0.2s ease-in-out;
+      border-radius: 8px;
+      width: 140%;
+    }
+    h1 {
+      font-family: variables.$h1Font;
+      font-size: 7.5rem;
+      margin-top: 20px;
+      margin-bottom: 0;
+      transition: all 0.2s ease-in-out;
+    }
+    h2 {
+      font-family: variables.$h2Font;
+      font-size: 2.5rem;
+      color: #ff3333;
+      text-shadow: -2px -2px 0 white;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  
+  header .ulElement {
+    display: flex;
+    margin-top: 15px;
+    ul {
+      list-style: none;
+    }
+    li {
+      text-decoration: none;
+      list-style: none;
+      margin-right: 25px;
+      margin-top: 30px;
+      transition: all 0.2s ease-in-out;
+    }
+    a {
+      color: white;
+      font-size: 1.25rem;
+      font-family: variables.$bodyFont;
+      padding: 15px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+  
+  .greenButton {
+    background-color: #009933;
+    border-radius: 8px;
+  }
+  
+  .redButton {
+    background-color: #ff3333;
+    border-radius: 5px;
+  }
+  
+  header h1:hover {
+            transform: scale(1.1);
+  }
+  header h2:hover {
+            transform: scale(1.1);
+  }
+  header li:hover {
+            transform: scale(1.1);
+  }
+  header img:hover {
+            transform: scale(1.1);
+  }
+  

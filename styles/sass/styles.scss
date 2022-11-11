@@ -1,0 +1,14 @@
+// Global Styles
+
+@use "./partials/setup";
+@use "./partials/variables";
+@use "./partials/global";
+@use "./partials/typography";
+
+
+// Header Element
+
+@use "./partials/header";
+@use "./partials/form";
+@use "./partials/form-styles";
+@use "./partials/footer";
