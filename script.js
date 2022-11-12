@@ -16,8 +16,12 @@ document.querySelector(".menu .close-button").addEventListener("click", function
 
 const drinksApp = {};
 
-// 2(a): Store the key (if needed)
-drinksApp.key = `1`;
+// // 2(a): Store the key (if needed)
+// drinksApp.key = `1`;
+
+// Store the users selection in a global variable to access
+
+const choice = document.querySelector(`#spirit`).value;
 
 
 // Phase 2: Function for calling the API:
@@ -26,7 +30,8 @@ drinksApp.getDrink = (query) => {
     
     
     // b: Store url = new URL(Endpoint)
-    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin`);
+    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${choice}`);
+
 
     // c: Fetch(url) 
 
@@ -41,18 +46,15 @@ drinksApp.getDrink = (query) => {
         const array = data.drinks;
         const first10 = array.slice(0, 10);
         console.log(first10);
-        drinksApp.displayDrinks(data.drinks)
+        // empty out what is currently in the ul
+        document.querySelector(`#drinkDisplay`).innerHTML = ``;
+        // display the content
+        drinksApp.displayDrinks(data.drinks);
     })
 
 }
 
-// Short hand for above:
-    // .then((res) => res.json())
-    // .then((data) => console.log(data.drinks))
-    // }
-
 // Phase 3: Displaying the art to the page:
-
 
 // a: Start function
 
@@ -89,13 +91,15 @@ drinksApp.getDrink = (query) => {
 
     drinksApp.getUserInput = () => {
 
-        document.querySelector(`#spirit`).addEventListener("change", function() {
+        document.querySelector(`#spirit`).addEventListener(`change`, function() {
             const selection = this.value
             console.log(selection);
-            return selection
+            drinksApp.getDrink(selection);
+            location.reload();
                     
         });
     }
+
 
 
 // Phase 1(b):
@@ -104,9 +108,9 @@ drinksApp.getDrink = (query) => {
 
 drinksApp.init = () => {
     // console.log("ready to go!");
+    drinksApp.getUserInput();
     drinksApp.getDrink();
     // drinksApp.displayDrinks();
-    drinksApp.getUserInput()
 }
 
 // Call init method
