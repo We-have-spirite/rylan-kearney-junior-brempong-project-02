@@ -34,37 +34,50 @@ drinksApp.getDrink = (query) => {
 
     // d: .then() x 2 
 
-    .then((res) => res.json())
-    .then((data) => console.log(data.drinks))
-        // document.querySelector(`spirit`).innerHTML = ""        
-        // drinksApp.displayDrinks
-    }
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        const array = data.drinks;
+        const first10 = array.slice(0, 10);
+        console.log(first10);
+        drinksApp.displayDrinks(data.drinks)
+    })
+
+}
+
+// Short hand for above:
+    // .then((res) => res.json())
+    // .then((data) => console.log(data.drinks))
+    // }
 
 // Phase 3: Displaying the art to the page:
 
 
 // a: Start function
 
-    drinksApp.displayDrinks = function(cocktails) {
+    drinksApp.displayDrinks = (cocktails) => {
         
-        cocktails.forEach( function(drinkObject) {
-            
+        cocktails.forEach(drinks => {
+            console.log(drinks);
+            // Create h2
             const name = document.createElement(`h2`);
-            name.innerText = drinkObject.strDrink;
+            name.innerText = drinks.strDrink;
 
-
+            // Create Img
             const drinkImage = document.createElement(`img`);
-            drinkImage.src = drinkObject.strDrinkThumb;
-            drinkImage.alt = drinkObject.strDrink;
+            drinkImage.src = drinks.strDrinkThumb;
+            drinkImage.alt = drinks.strDrink;
 
-
-            const drinkContainer = document.createElement(`li`);
+            // create li & append
+            const drinkContainer = document.createElement(`div`);
             drinkContainer.classList.add(`cocktails`);
 
-            drinkContainer.append(name, drinkImage);
+            drinkContainer.appendChild(name);
+            drinkContainer.appendChild(drinkImage);
 
-
-            document.querySelector(`drinkDisplay`).append(drinkContainer);
+            // Adding all the content we created to the ul
+            document.querySelector(`#drinkDisplay`).appendChild(drinkContainer);
 
         })
             
@@ -94,7 +107,7 @@ drinksApp.init = () => {
     drinksApp.getDrink();
     // drinksApp.displayDrinks();
     drinksApp.getUserInput()
-};
+}
 
 // Call init method
 
