@@ -1,15 +1,6 @@
 // Code for pop-up to display!
 
 
-document.querySelector("#find").addEventListener("click", function(){
-    document.querySelector(".menu").classList.add("active");
-});
-
-document.querySelector(".menu .close-button").addEventListener("click", function(){
-    document.querySelector(".menu").classList.remove("active");
-});
-
-
 // Phase 1: General Set Up:
 
 // a: Make Name Space
@@ -21,7 +12,7 @@ const drinksApp = {};
 
 // Store the users selection in a global variable to access
 
-const choice = document.querySelector(`#spirit`).value;
+
 
 
 // Phase 2: Function for calling the API:
@@ -30,7 +21,7 @@ drinksApp.getDrink = (query) => {
     
     
     // b: Store url = new URL(Endpoint)
-    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${choice}`);
+    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${query}`);
 
 
     // c: Fetch(url) 
@@ -49,7 +40,7 @@ drinksApp.getDrink = (query) => {
         // empty out what is currently in the ul
         document.querySelector(`#drinkDisplay`).innerHTML = ``;
         // display the content
-        drinksApp.displayDrinks(data.drinks);
+        drinksApp.displayDrinks(first10);
     })
 
 }
@@ -90,12 +81,14 @@ drinksApp.getDrink = (query) => {
 
 
     drinksApp.getUserInput = () => {
-
-        document.querySelector(`#spirit`).addEventListener(`change`, function() {
+        //console.log("hi")
+        const choice = document.querySelector(`#spirit`);
+        choice.addEventListener(`change`, function() {
             const selection = this.value
             console.log(selection);
             drinksApp.getDrink(selection);
-            location.reload();
+            //location.reload();
+
                     
         });
     }
@@ -103,16 +96,37 @@ drinksApp.getDrink = (query) => {
 
 
 // Phase 1(b):
+drinksApp.setUpEventListener = () => {
+    console.log("jkdshfkjds") 
+    const findButton = document.querySelector("#find");
+    findButton.addEventListener("click", function(){
+        console.log("hello")
+        document.querySelector(".menu").classList.add("active");
+    });
+    
+    document.querySelector(".menu .close-button").addEventListener("click", function(){
+        document.querySelector(".menu").classList.remove("active");
+    });
+    
+}
 
 // Make init method that will store our code/functions that need to run on page load
 
 drinksApp.init = () => {
-    // console.log("ready to go!");
+    console.log("ready to go!");
+    drinksApp.setUpEventListener();
+
     drinksApp.getUserInput();
-    drinksApp.getDrink();
-    // drinksApp.displayDrinks();
+    //drinksApp.getDrink();
+    
+    //drinksApp.displayDrinks();
 }
+
+
 
 // Call init method
 
 drinksApp.init()
+
+
+

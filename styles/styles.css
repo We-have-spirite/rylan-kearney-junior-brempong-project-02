@@ -245,6 +245,11 @@ button {
   text-transform: uppercase;
 }
 
+@media (max-width: 1200px) {
+  header {
+    height: 150vh;
+  }
+}
 h1, h2 {
   color: white;
 }
@@ -257,7 +262,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  height: 120vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -365,7 +370,7 @@ header img:hover {
 
 .center-button {
   position: absolute;
-  bottom: -50%;
+  top: 150%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -382,7 +387,7 @@ header img:hover {
 
 .menu {
   position: absolute;
-  bottom: -150%;
+  top: -150%;
   left: 50%;
   opacity: 0;
   -webkit-transform: translate(-50%, -50%) scale(1.25);
@@ -410,9 +415,12 @@ header img:hover {
   border-radius: 15px;
   cursor: pointer;
 }
+.menu h2 {
+  color: #d60c0c;
+}
 
 .menu.active {
-  bottom: -60%;
+  top: 150%;
   opacity: 1;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
@@ -429,7 +437,6 @@ header img:hover {
   text-align: center;
   margin: 10px 0px 20px;
   font-size: 25px;
-  color: #d60c0c;
 }
 
 form {
@@ -451,11 +458,15 @@ select {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+#drinkDisplay img {
+  height: 200px;
+}
 
 footer {
   background-color: #ff3333;
   text-align: center;
   height: 25px;
+  overflow: hidden;
 }
 footer p {
   margin: 0;

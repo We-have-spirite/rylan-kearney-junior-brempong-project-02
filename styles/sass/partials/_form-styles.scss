@@ -2,7 +2,7 @@
 
 .center-button {
     position: absolute;
-    bottom: -50%;
+    top: 150%;
     left: 50%;
     transform: translate(-50%, -50%);
     #find {
@@ -18,7 +18,7 @@
 
 .menu {
     position: absolute;
-    bottom: -150%;
+    top: -150%;
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
@@ -43,10 +43,13 @@
         border-radius: 15px;
         cursor: pointer;
     }
+    h2 {
+        color:#d60c0c;
+    }
 }
 
 .menu.active {
-    bottom: -60%;
+    top: 150%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     transition: top 0ms ease-in-out 0ms,
@@ -60,7 +63,6 @@
         text-align: center;
         margin: 10px 0px 20px;
         font-size: 25px;
-        color: #d60c0c;
     }
 }
 
