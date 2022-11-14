@@ -30,7 +30,7 @@ drinksApp.getDrink = (query) => {
         //console.log(first10);
         // empty out what is currently in the ul
         document.querySelector(`#drinkDisplay`).innerHTML = ``;
-        // display the content
+        // display the content to the page
         drinksApp.displayDrinks(first10);
     })
 
@@ -104,7 +104,6 @@ drinksApp.init = () => {
     drinksApp.setUpEventListener();
     drinksApp.getUserInput();
 }
-
 
 //Step 6: Call init method
 

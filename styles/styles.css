@@ -262,7 +262,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 120vh;
+  height: 110vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -358,7 +358,7 @@ header img:hover {
 }
 
 .pop-up-form {
-  height: 100vh;
+  height: 130vh;
   background: rgb(12, 247, 51);
   background: linear-gradient(249deg, rgba(12, 247, 51, 0.9948179956) 0%, rgb(219, 37, 37) 25%, rgb(30, 198, 57) 49%, rgb(219, 37, 37) 75%, rgb(12, 247, 51) 100%);
 }
@@ -370,7 +370,7 @@ header img:hover {
 
 .center-button {
   position: absolute;
-  top: 150%;
+  top: 175%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -420,7 +420,8 @@ header img:hover {
 }
 
 .menu.active {
-  top: 150%;
+  top: 175%;
+  width: 95vw;
   opacity: 1;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
@@ -449,6 +450,14 @@ form label {
 select {
   padding: 5px;
   width: 50%;
+}
+
+#drinkDisplay {
+  padding: 20px;
+}
+
+.cocktails {
+  padding: 20px;
 }
 
 #drinkDisplay {
