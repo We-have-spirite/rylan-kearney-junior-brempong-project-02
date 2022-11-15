@@ -353,7 +353,7 @@ header img:hover {
 }
 
 .popUpForm {
-  height: 130vh;
+  height: 140vh;
   background: rgb(12, 247, 51);
   background: linear-gradient(249deg, rgba(12, 247, 51, 0.9948179956) 0%, rgb(219, 37, 37) 25%, rgb(30, 198, 57) 49%, rgb(219, 37, 37) 75%, rgb(12, 247, 51) 100%);
   border-radius: 10px;
@@ -417,7 +417,7 @@ header img:hover {
 }
 
 .menu.active {
-  top: 175%;
+  top: 185%;
   width: 95vw;
   opacity: 1;
   -webkit-transform: translate(-50%, -50%) scale(1);
@@ -522,19 +522,39 @@ footer p {
   .popUpForm {
     height: 250vh;
   }
-  .centreButton {
-    top: 200%;
+  .centerButton {
+    top: 250%;
   }
   .menu {
-    top: -200%;
+    top: -250%;
   }
   .menu.active {
-    top: 235%;
+    top: 250%;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
+  .centerButton {
+    top: 270%;
+  }
+  .menu {
+    top: -270%;
+  }
+  .menu.active {
+    top: 270%;
+  }
+}
+@media (max-width: 845px) {
   .popUpForm {
-    height: 300vh;
+    height: 280vh;
+  }
+  .centerButton {
+    top: 290%;
+  }
+  .menu {
+    top: -290%;
+  }
+  .menu.active {
+    top: 290%;
   }
 }
 @media (max-width: 665px) {
@@ -547,10 +567,36 @@ footer p {
   header .imgContainer {
     width: 20%;
   }
+  .popUpForm {
+    height: 390vh;
+  }
+  .centerButton {
+    top: 350%;
+  }
+  .menu {
+    top: -350%;
+  }
+  .menu.active {
+    top: 350%;
+  }
+}
+@media (max-width: 620px) {
+  .popUpForm {
+    height: 500vh;
+  }
+  .centerButton {
+    top: 400%;
+  }
+  .menu {
+    top: -400%;
+  }
+  .menu.active {
+    top: 400%;
+  }
 }
 @media (max-width: 520px) {
-  h1 {
-    font-size: 5.5rem;
+  header h1 {
+    font-size: 5rem;
   }
   header .ulElement {
     -webkit-box-orient: vertical;
@@ -558,7 +604,7 @@ footer p {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  header h2 {
+  header header h2 {
     font-size: 2rem;
   }
 }
