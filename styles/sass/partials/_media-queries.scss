@@ -1,8 +1,62 @@
 @use "./variables";
 
 @media (max-width: 1200px) {
-    header {
+    .headerElement {
         height: 150vh;
     }
+
+    .popUpForm {
+        height: 250vh;
+    }
+
+    .centreButton {
+    top: 200%;
+    }
+
+    .menu {
+        top: -200%;
+    }
+
+    .menu.active {
+        top: 235%;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .popUpForm {
+        height: 300vh;
+    }
+
+
+}
+
+@media (max-width: 665px) {
+    .textContainer {
+        width: 70%;
+    }
+
+    header .ulElement a {
+        font-size: 1rem;
+    }
+
+    header .imgContainer {
+        width: 20%;
+    }
+}
+
+@media (max-width: 520px) {
+    h1 {
+        font-size: 5.5rem;
+    }
+
+    header .ulElement {
+        flex-direction: column;
+    }
+
+    header h2 {
+        font-size: 2rem;
+    }
+
 }
 
