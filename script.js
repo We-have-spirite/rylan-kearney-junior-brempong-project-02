@@ -1,5 +1,30 @@
 //GOAL: The goal for our app is to collect a list of cocktails containing the user's choice of spirit, and provide them with a list of cocktails containing that spirit from the Cocktail Database API
 
+// Here are the following steps we set out to achieve this:
+
+// Step 1: Set-Up
+// 1(a). Making a namespace object where we can scope our app to avoid potential conflicts
+// 1(b). Create our init function and move it to the end of the page for what functions we want to be called on page load
+
+// Step 2: Calling the API
+// 2(a) Create a function and store our endpoint
+// 2(b) Fetch url
+// 2(c) .Then, where we will recieve our JSON object and parse through to recieve 10 items from our drinks array & clear the value of the innerhtml once recieved
+
+// Step 3: Displaying our drinks to the page
+// 3(a) Start a function & create a .forEach method where we can create a new element for every object in our array
+// 3(b) Create elements for li>h2>img elements
+// 3(c) Append elements h2 & img (with src & alt) to our li
+// 3(d) Append the dynamic li to our UL element which currently exists in our HTML
+
+// Step 4: Get the user input
+// Add an event listener to our form and pass through the submit action where we will gather the value of the users submission. We can then take this value and call our display drinks function and pass through the users submission value.
+
+// Step 5: Clickable Form Pop-up
+// Add JS code for making our form pop-up by adding an event listender where we will make our form active once the user has clicked. This is where the user will input their choice to display the images to the page. We initially had this at the top of our code, but opted to move this down for cleaner, more legible code.
+
+
+
 
 //Step 1: Making a namespace:
 
@@ -27,7 +52,6 @@ drinksApp.getDrink = (query) => {
     .then(data => {
         const array = data.drinks;
         const first10 = array.slice(0, 10);
-        //console.log(first10);
         // empty out what is currently in the ul
         document.querySelector(`#drinkDisplay`).innerHTML = ``;
         // display the content to the page
@@ -84,10 +108,8 @@ drinksApp.getDrink = (query) => {
 
 // Clickable pop up form to retrieve user's selection:
 drinksApp.setUpEventListener = () => {
-    console.log("jkdshfkjds") 
     const findButton = document.querySelector("#find");
     findButton.addEventListener("click", function(){
-        //console.log("hello")
         document.querySelector(".menu").classList.add("active");
     });
     
@@ -100,12 +122,11 @@ drinksApp.setUpEventListener = () => {
 //Step 5: Make init method that will store our code/functions that need to run on page load
 
 drinksApp.init = () => {
-    //console.log("ready to go!");
     drinksApp.setUpEventListener();
     drinksApp.getUserInput();
 }
 
-//Step 6: Call init method
+//Step 1(b): Call init method
 
 drinksApp.init()
 
