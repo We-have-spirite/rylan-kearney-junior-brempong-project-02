@@ -2,10 +2,10 @@
 
 .ingredientSection {
     height: 130vh;
-    background: rgb(12,247,51);
-    background: linear-gradient(249deg, rgba(12,247,51,0.9948179955575981) 0%, rgba(219,37,37,1) 25%, rgba(30,198,57,1) 49%, rgba(219,37,37,1) 75%, rgba(12,247,51,1) 100%); 
-    border-radius: 10px;
-    border: 3px solid #d60c0c;
+    background-image: url(../assets/ingredientsBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     }
 
 .ingredientSection {
