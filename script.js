@@ -113,7 +113,7 @@ drinksApp.setUpEventListener = () => {
         document.querySelector(".menu").classList.add("active");
     });
     
-    document.querySelector(".menu .close-button").addEventListener("click", function(){
+    document.querySelector(".menu .closeButton").addEventListener("click", function(){
         document.querySelector(".menu").classList.remove("active");
     });
     

@@ -246,8 +246,50 @@ button {
 }
 
 @media (max-width: 1200px) {
-  header {
+  .headerElement {
     height: 150vh;
+  }
+  .popUpForm {
+    height: 250vh;
+  }
+  .centreButton {
+    top: 200%;
+  }
+  .menu {
+    top: -200%;
+  }
+  .menu.active {
+    top: 235%;
+  }
+}
+@media (max-width: 900px) {
+  .popUpForm {
+    height: 300vh;
+  }
+}
+@media (max-width: 665px) {
+  .textContainer {
+    width: 70%;
+  }
+  header .ulElement a {
+    font-size: 1rem;
+  }
+  header .imgContainer {
+    width: 20%;
+  }
+}
+@media (max-width: 520px) {
+  h1 {
+    font-size: 5.5rem;
+  }
+  header .ulElement {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header h2 {
+    font-size: 2rem;
   }
 }
 h1, h2 {
@@ -370,14 +412,14 @@ header img:hover {
   padding: 0px;
 }
 
-.center-button {
+.centerButton {
   position: absolute;
   top: 175%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.center-button #find {
+.centerButton #find {
   padding: 10px 20px;
   font-size: 20px;
   color: #fff;
@@ -404,7 +446,7 @@ header img:hover {
   transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
   transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms, -webkit-transform 20ms ease-in-out 0ms;
 }
-.menu .close-button {
+.menu .closeButton {
   position: absolute;
   top: 10px;
   right: 10px;
