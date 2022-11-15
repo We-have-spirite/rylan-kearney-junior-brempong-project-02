@@ -1,4 +1,6 @@
-//GOAL: The goal for our app is to collect a list of cocktails containing the user's choice of spirit, and provide them with a list of cocktails containing that spirit from the Cocktail Database API
+                            //MVP GOAL!!
+
+// The goal for our app is to collect a list of cocktails containing the user's choice of spirit, and provide them with a list of cocktails containing that spirit from the Cocktail Database API
 
 // Here are the following steps we set out to achieve this:
 
@@ -105,7 +107,6 @@ drinksApp.getDrink = (query) => {
     }
 
 
-
 // Clickable pop up form to retrieve user's selection:
 drinksApp.setUpEventListener = () => {
     const findButton = document.querySelector("#find");
@@ -119,6 +120,86 @@ drinksApp.setUpEventListener = () => {
     
 }
 
+
+
+
+// STRETCH GOAL
+
+// To create Search function for the ingredient section, where when a user inputs, they are able to surface the ingredients required to make the cocktail of their choice.
+
+
+// Step 1: Calling the API
+// 1(a) Create a function and store our new endpoint
+// 1(b) Fetch url
+// 1(c) .Then, where we will recieve our JSON object and parse through to recieve our array of objects which we can parse through to grab the ingredient key
+
+// Step 2: Get the user input
+// 2(a) Add an event listener to our input form and pass through the submit action where we will gather the value of the users submission. We can then take this value and call our display drinks function and pass through the users submission value.
+
+
+// Step 3: Displaying our drinks to the page
+// 3(a) Start a function & create a .forEach method where we can create a new element for every time the user clicks submit
+// 3(b) Create elements for li>h2>img elements
+// 3(c) Append elements h2 & img (with src & alt) to our li
+// 3(d) Append the dynamic li to our UL element which currently exists in our HTML
+
+
+// Call the API with out new endpoint:
+
+drinksApp.searchDrink = (drinkSearchQuery) => {
+    
+    
+    // 2a: Store url = new URL(Endpoint)
+    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`);
+    
+    
+    // 2b: Fetch(url) 
+    
+    fetch(url)
+    
+    // 2c: .then() x 2 
+    
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        const array = data.drinks;
+        console.log(array);
+        // empty out what is currently in the ul
+        document.querySelector('#ingredientDisplay').innerHTML = ``;
+        // // display the content to the page
+        // drinksApp.displayDrinks(array);
+    })
+    
+}
+
+
+
+// Getting the user input
+
+drinksApp.getIngredients = () => {
+
+    const choice = document.querySelector('.drinkChoice');
+    choice.addEventListener(`submit`, function() {
+        const selection = choice.title;
+        drinksApp.searchDrink(selection);
+    });
+}
+
+
+drinksApp.testchoice = document.querySelector('.drinkChoice');
+console.log(drinksApp.testchoice);
+
+
+
+// Displaying to the page
+
+//Step 3: Displaying the drinks to the page:
+
+// 3a: Start function to display to the page
+
+
+
 //Step 5: Make init method that will store our code/functions that need to run on page load
 
 drinksApp.init = () => {
@@ -126,31 +207,8 @@ drinksApp.init = () => {
     drinksApp.getUserInput();
 }
 
+
 //Step 1(b): Call init method
 
 drinksApp.init()
-
-// Search function for the ingredient section
-
-// Step 1: Creating modules
-
-// 1(a)Setup Import/Export modules with script.js and index.html
-
-// Step 2: Calling the API
-// 2(a) Create a function and store our endpoint
-// 2(b) Fetch url
-// 2(c) .Then, where we will recieve our JSON object and parse through to recieve our array of objects which we can parse through to grab the ingredient key
-
-// Step 3: Get the user input
-// 3(a) Add an event listener to our input form and pass through the submit action where we will gather the value of the users submission. We can then take this value and call our display drinks function and pass through the users submission value.
-
-
-// Step 4: Displaying our drinks to the page
-// 4(a) Start a function & create a .forEach method where we can create a new element for every time the user clicks submit
-// 4(b) Create elements for li>h2>img elements
-// 4(c) Append elements h2 & img (with src & alt) to our li
-// 4(d) Append the dynamic li to our UL element which currently exists in our HTML
-
-
-
 
