@@ -151,7 +151,7 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     
     
     // 2a: Store url = new URL(Endpoint)
-    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkSearchQuery}`);
+    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007`);
     
     
     // 2b: Fetch(url) 
@@ -165,7 +165,6 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     })
     .then(data => {
         const array = data.drinks;
-        console.log(array);
         // empty out what is currently in the ul
         document.querySelector('#ingredientDisplay').innerHTML = ``;
         // // display the content to the page
@@ -173,8 +172,8 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     })
     
 }
-const userInput = document.querySelector('input');
-console.log(userInput)
+
+
 
 // Getting the user input
 
@@ -185,12 +184,22 @@ drinksApp.getIngredients = (item) => {
     choice.addEventListener(`submit`, function(event) {
 
         event.preventDefault();
-        console.log('form is submitted!');
         //const selection = this.target;
         const userInput = document.querySelector('input');
         const drinkIDInput = userInput.value;
+        userInput.value = '';
         console.log(drinkIDInput)
         drinksApp.searchDrink(userInput);
+
+
+        if(drinkIDInput) {           
+            // console.log("Test");
+            drinksApp.searchDrink();
+            
+
+
+            
+        }
 
     });
 }
@@ -201,19 +210,20 @@ drinksApp.getIngredients = (item) => {
 //Step 3: Displaying the drinks to the page:
 drinksApp.displayRecipes = (recipe) => {
         
-    cocktails.forEach(drinkRecipe => {
+    recipe.forEach(drinkRecipe => {
         console.log(drinkRecipe);
+
         // Create p element for ingredients
         const ingredients = document.createElement(`p`);
-        ingredients.innerText = drinks.strIngredient;
+        ingredients.innerText = recipe.strIngredient1;
 
         // Create p element for measurements
         const measurements = document.createElement(`p`);
-        measurements.innerText = drinks.strMeasure;
+        measurements.innerText = recipe.strMeasure;
 
         // Create p element for instructions
         const instructions = document.createElement(`p`);
-        instructions.innerText = drinks.strInstructions;
+        instructions.innerText = recipe.strInstructions;
 
         // create div container & append
         const recipeContainer = document.createElement(`div`);
