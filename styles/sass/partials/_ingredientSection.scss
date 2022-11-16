@@ -11,13 +11,11 @@
 .ingredientSection {
     margin: 0px;
     padding: 0px;
-}
-
-.ingredientSection .myForm {
     padding-top: 28%;
 }
 
-label {
+
+label, .submitButton {
     padding: 10px 20px;
     font-size: 20px;
     color: #fff;
@@ -32,4 +30,9 @@ label {
 #drinkChoice {
     margin-top: 20px;
     width: 400px;
+}
+
+.submitButton {
+    margin-top: 10px;
+    background-color: red;
 }

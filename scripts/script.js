@@ -174,22 +174,17 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
 }
 
 
-
 // Getting the user input
 
-drinksApp.getIngredients = () => {
+drinksApp.getIngredients = (item) => {
 
     const choice = document.querySelector('.drinkChoice');
-    choice.addEventListener(`submit`, function() {
-        const selection = choice.title;
+    choice.addEventListener(`submit`, function(event) {
+        event.preventDefault();
+        const selection = this.target;
         drinksApp.searchDrink(selection);
     });
 }
-
-
-drinksApp.testchoice = document.querySelector('.drinkChoice');
-console.log(drinksApp.testchoice);
-
 
 
 // Displaying to the page
@@ -205,6 +200,7 @@ console.log(drinksApp.testchoice);
 drinksApp.init = () => {
     drinksApp.setUpEventListener();
     drinksApp.getUserInput();
+    drinksApp.getIngredients();
 }
 
 
