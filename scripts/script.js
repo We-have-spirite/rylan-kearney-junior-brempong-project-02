@@ -1,6 +1,4 @@
-                            //MVP GOAL!!
-
-// The goal for our app is to collect a list of cocktails containing the user's choice of spirit, and provide them with a list of cocktails containing that spirit from the Cocktail Database API
+//GOAL: The goal for our app is to collect a list of cocktails containing the user's choice of spirit, and provide them with a list of cocktails containing that spirit from the Cocktail Database API
 
 // Here are the following steps we set out to achieve this:
 
@@ -53,13 +51,15 @@ drinksApp.getDrink = (query) => {
     })
     .then(data => {
         const array = data.drinks;
-        const first10 = array.slice(0, 10);
+        const drinkShuffle = array.sort(() => 0.5 - Math.random());
+        const first10 = drinkShuffle.slice(0, 10);
         // empty out what is currently in the ul
         document.querySelector(`#drinkDisplay`).innerHTML = ``;
         // display the content to the page
         drinksApp.displayDrinks(first10);
+        console.log(first10)
     })
-
+    
 }
 
 //Step 3: Displaying the drinks to the page:
@@ -74,6 +74,10 @@ drinksApp.getDrink = (query) => {
             const name = document.createElement(`h2`);
             name.innerText = drinks.strDrink;
 
+            // Create p element for Drink ID
+            const drinkID = document.createElement(`p`);
+            drinkID.innerText = drinks.idDrink;
+
             // Create Img
             const drinkImage = document.createElement(`img`);
             drinkImage.src = drinks.strDrinkThumb;
@@ -84,6 +88,7 @@ drinksApp.getDrink = (query) => {
             drinkContainer.classList.add(`cocktails`);
 
             drinkContainer.appendChild(name);
+            drinkContainer.appendChild(drinkID);
             drinkContainer.appendChild(drinkImage);
 
             // Adding all the content we created to the ul
@@ -99,11 +104,11 @@ drinksApp.getDrink = (query) => {
     drinksApp.getUserInput = () => {
         const choice = document.querySelector(`#spirit`);
         choice.addEventListener(`change`, function() {
-            const selection = this.value
-            //console.log(selection);
+            const selection = this.value;
             drinksApp.getDrink(selection);
         });
     }
+
 
 
 // Clickable pop up form to retrieve user's selection:
@@ -118,7 +123,6 @@ drinksApp.setUpEventListener = () => {
     });
     
 }
-
 
 // STRETCH GOAL
 
@@ -147,7 +151,7 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     
     
     // 2a: Store url = new URL(Endpoint)
-    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`);
+    const url = new URL(`www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkSearchQuery}`);
     
     
     // 2b: Fetch(url) 
@@ -188,6 +192,36 @@ drinksApp.getIngredients = (item) => {
 // Displaying to the page
 
 //Step 3: Displaying the drinks to the page:
+drinksApp.displayRecipes = (recipe) => {
+        
+    cocktails.forEach(drinkRecipe => {
+        console.log(drinkRecipe);
+        // Create p element for ingredients
+        const ingredients = document.createElement(`p`);
+        ingredients.innerText = drinks.strIngredient;
+
+        // Create p element for measurements
+        const measurements = document.createElement(`p`);
+        measurements.innerText = drinks.strMeasure;
+
+        // Create p element for instructions
+        const instructions = document.createElement(`p`);
+        instructions.innerText = drinks.strInstructions;
+
+        // create div container & append
+        const recipeContainer = document.createElement(`div`);
+        recipeContainer.classList.add(`recipe`);
+
+        recipeContainer.appendChild(ingredients);
+        recipeContainer.appendChild(measurements);
+        recipeContainer.appendChild(instructions);
+
+        // Adding all the content we created to the ul
+        document.querySelector(`#ingredientDisplay`).appendChild(recipeContainer);
+
+    })
+        
+}
 
 // 3a: Start function to display to the page
 
@@ -205,4 +239,3 @@ drinksApp.init = () => {
 //Step 1(b): Call init method
 
 drinksApp.init()
-

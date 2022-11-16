@@ -415,6 +415,10 @@ header img:hover {
 .menu h2 {
   color: #d60c0c;
 }
+.menu p {
+  color: #d60c0c;
+  font-size: 0.8rem;
+}
 
 .menu.active {
   top: 185%;
