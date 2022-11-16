@@ -93,7 +93,6 @@ drinksApp.getDrink = (query) => {
             
     }
 
-
 // Step 4: Getting the input
 
 
@@ -119,8 +118,6 @@ drinksApp.setUpEventListener = () => {
     });
     
 }
-
-
 
 
 // STRETCH GOAL
@@ -181,6 +178,7 @@ drinksApp.getIngredients = (item) => {
     const choice = document.querySelector('.drinkChoice');
     choice.addEventListener(`submit`, function(event) {
         event.preventDefault();
+        console.log('form is submitted!');
         const selection = this.target;
         drinksApp.searchDrink(selection);
     });
