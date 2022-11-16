@@ -169,7 +169,7 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
         // empty out what is currently in the ul
         document.querySelector('#ingredientDisplay').innerHTML = ``;
         // // display the content to the page
-        // drinksApp.displayDrinks(array);
+        drinksApp.displayRecipes(array);
     })
     
 }
