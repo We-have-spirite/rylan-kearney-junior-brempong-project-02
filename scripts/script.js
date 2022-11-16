@@ -151,7 +151,7 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     
     
     // 2a: Store url = new URL(Endpoint)
-    const url = new URL(`www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkSearchQuery}`);
+    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkSearchQuery}`);
     
     
     // 2b: Fetch(url) 
@@ -173,18 +173,25 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     })
     
 }
-
+const userInput = document.querySelector('input');
+console.log(userInput)
 
 // Getting the user input
 
 drinksApp.getIngredients = (item) => {
 
     const choice = document.querySelector('.drinkChoice');
+
     choice.addEventListener(`submit`, function(event) {
+
         event.preventDefault();
         console.log('form is submitted!');
-        const selection = this.target;
-        drinksApp.searchDrink(selection);
+        //const selection = this.target;
+        const userInput = document.querySelector('input');
+        const drinkIDInput = userInput.value;
+        console.log(drinkIDInput)
+        drinksApp.searchDrink(userInput);
+
     });
 }
 
