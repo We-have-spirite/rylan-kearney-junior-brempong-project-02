@@ -165,12 +165,10 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     })
     .then(data => {
         const array = data.drinks;
-        // console.log(data.drinks);
         // empty out what is currently in the ul
         document.querySelector('#recipeDisplay').innerHTML = ``;
         // // display the content to the page
         drinksApp.displayRecipes(array);
-        console.log(array);
     })
     
 }
@@ -192,16 +190,13 @@ drinksApp.getIngredients = () => {
         const userInput = document.querySelector('input');
         const drinkIDInput = userInput.value;
         userInput.value = '';
-        console.log(drinkIDInput)
         drinksApp.searchDrink(drinkIDInput);
 
 
         if (drinkIDInput) {           
             // console.log("Test");
-            drinksApp.searchDrink();  
-            console.log("User has submitted something");          
+            drinksApp.searchDrink();           
         } else {
-            console.log("Empty String");
         }
 
     });

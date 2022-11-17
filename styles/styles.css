@@ -232,6 +232,10 @@ html {
   width: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -677,5 +681,24 @@ footer p {
   }
   header header h2 {
     font-size: 2rem;
+  }
+}
+@media (max-width: 450px) {
+  header .ulElement a {
+    font-size: 0.8rem;
+  }
+  form label {
+    font-size: 16px;
+  }
+  select {
+    width: 30%;
+  }
+}
+@media (max-width: 365px) {
+  form label {
+    font-size: 12px;
+  }
+  #drinkChoice {
+    width: 340px;
   }
 }
