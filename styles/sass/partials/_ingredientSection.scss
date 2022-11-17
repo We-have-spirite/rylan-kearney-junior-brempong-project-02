@@ -1,7 +1,7 @@
 @use "./variables";
 
 .ingredientSection {
-    height: 130vh;
+    height: 170vh;
     background-image: url(../assets/ingredientsBackground.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,3 +36,33 @@ label, .submitButton {
     margin-top: 10px;
     background-color: red;
 }
+
+.recipeDisplay {
+    width: 75%;
+    margin: 20px auto;
+  }
+
+  .recipe {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background: white;
+  }
+
+  .recipeImgContainer img{
+    max-width: 35%;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .ingredients,
+  .measurements {
+      padding: 20px;
+      width: 50%;
+  }
+
+  .measurements {
+      text-align: right;
+  }

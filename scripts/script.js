@@ -167,7 +167,7 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
         const array = data.drinks;
         // console.log(data.drinks);
         // empty out what is currently in the ul
-        document.querySelector('#ingredientDisplay').innerHTML = ``;
+        document.querySelector('#recipeDisplay').innerHTML = ``;
         // // display the content to the page
         drinksApp.displayRecipes(array);
         console.log(array);
@@ -215,14 +215,68 @@ drinksApp.displayRecipes = (recipe) => {
     recipe.forEach(function(drinkRecipe) {
         // console.log(drinkRecipe);
 
-        // Create p element for ingredients
-        const ingredients = document.createElement(`p`);
-        ingredients.innerText = drinkRecipe.strIngredient1;
+        // Create li elements for measurements
+        const measurementsOne = document.createElement(`li`);
+        measurementsOne.innerText = drinkRecipe.strMeasure1;
+        
+        const measurementsTwo = document.createElement(`li`);
+        measurementsTwo.innerText = drinkRecipe.strMeasure2;
+        
+        const measurementsThree = document.createElement(`li`);
+        measurementsThree.innerText = drinkRecipe.strMeasure3;
+        
+        const measurementsFour = document.createElement(`li`);
+        measurementsFour.innerText = drinkRecipe.strMeasure4;
+        
+        const measurementsFive = document.createElement(`li`);
+        measurementsFive.innerText = drinkRecipe.strMeasure5;
+        
+        const measurementsSix = document.createElement(`li`);
+        measurementsSix.innerText = drinkRecipe.strMeasure6;
+        
+        const measurementsSeven = document.createElement(`li`);
+        measurementsSeven.innerText = drinkRecipe.strMeasure7;
+        
+        const measurementsEight = document.createElement(`li`);
+        measurementsEight.innerText = drinkRecipe.strMeasure8;
+        
+        //Create ul element for measurements
+        const measurementList = document.createElement(`ul`);
+        measurementList.classList.add(`measurements`);
 
-        // Create p element for measurements
-        const measurements = document.createElement(`p`);
-        measurements.innerText = drinkRecipe.strMeasure1;
 
+
+        // Create li elements for ingredients
+        const ingredientsOne = document.createElement(`li`);
+        ingredientsOne.innerText = drinkRecipe.strIngredient1;
+
+        const ingredientsTwo = document.createElement(`li`);
+        ingredientsTwo.innerText = drinkRecipe.strIngredient2;
+
+        const ingredientsThree = document.createElement(`li`);
+        ingredientsThree.innerText = drinkRecipe.strIngredient3;
+
+        const ingredientsFour = document.createElement(`li`);
+        ingredientsFour.innerText = drinkRecipe.strIngredient4;
+
+        const ingredientsFive = document.createElement(`li`);
+        ingredientsFive.innerText = drinkRecipe.strIngredient5;
+
+        const ingredientsSix = document.createElement(`li`);
+        ingredientsSix.innerText = drinkRecipe.strIngredient6;
+
+        const ingredientsSeven = document.createElement(`li`);
+        ingredientsSeven.innerText = drinkRecipe.strIngredient7;
+
+        const ingredientsEight = document.createElement(`li`);
+        ingredientsEight.innerText = drinkRecipe.strIngredient8;
+
+        //Create ul element for ingredients
+        const ingredientList = document.createElement(`ul`);
+        ingredientList.classList.add(`ingredients`);
+
+
+   
         // Create p element for instructions
         const instructions = document.createElement(`p`);
         instructions.innerText = drinkRecipe.strInstructions;
@@ -231,12 +285,44 @@ drinksApp.displayRecipes = (recipe) => {
         const recipeContainer = document.createElement(`div`);
         recipeContainer.classList.add(`recipe`);
 
-        recipeContainer.appendChild(ingredients);
-        recipeContainer.appendChild(measurements);
+        //Appending recipe elements to the page
+        recipeContainer.appendChild(measurementList);
+        measurementList.appendChild(measurementsOne);
+        measurementList.appendChild(measurementsTwo);
+        measurementList.appendChild(measurementsThree);
+        measurementList.appendChild(measurementsFour);
+        measurementList.appendChild(measurementsFive);
+        measurementList.appendChild(measurementsSix);
+        measurementList.appendChild(measurementsSeven);
+        measurementList.appendChild(measurementsEight);
+        recipeContainer.appendChild(ingredientList);
+        ingredientList.appendChild(ingredientsOne);
+        ingredientList.appendChild(ingredientsTwo);
+        ingredientList.appendChild(ingredientsThree);
+        ingredientList.appendChild(ingredientsFour);
+        ingredientList.appendChild(ingredientsFive);
+        ingredientList.appendChild(ingredientsSix);
+        ingredientList.appendChild(ingredientsSeven);
+        ingredientList.appendChild(ingredientsEight);
         recipeContainer.appendChild(instructions);
 
+        //Creating img element for recipe img
+        const recipeImage = document.createElement(`img`);
+        recipeImage.src = drinkRecipe.strDrinkThumb;
+        recipeImage.alt = drinkRecipe.strDrink;
+
+        //Creating img container div
+        const recipeImgContainer = document.createElement(`div`);
+        recipeImgContainer.classList.add(`recipeImgContainer`);
+
+        //Appending the img
+        recipeImgContainer.appendChild(recipeImage)
+
+
+
         // Adding all the content we created to the ul
-        document.querySelector(`#ingredientDisplay`).appendChild(recipeContainer);
+        document.querySelector(`#recipeDisplay`).appendChild(recipeContainer);
+        document.querySelector(`#recipeDisplay`).appendChild(recipeImgContainer);
 
     })
         

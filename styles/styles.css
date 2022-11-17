@@ -245,6 +245,11 @@ button {
   text-transform: uppercase;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 h1, h2 {
   color: white;
 }
@@ -353,7 +358,7 @@ header img:hover {
 }
 
 .popUpForm {
-  height: 140vh;
+  height: 195vh;
   background: rgb(12, 247, 51);
   background: linear-gradient(249deg, rgba(12, 247, 51, 0.9948179956) 0%, rgb(219, 37, 37) 25%, rgb(30, 198, 57) 49%, rgb(219, 37, 37) 75%, rgb(12, 247, 51) 100%);
   border-radius: 10px;
@@ -367,7 +372,7 @@ header img:hover {
 
 .centerButton {
   position: absolute;
-  top: 175%;
+  top: 195%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -421,7 +426,7 @@ header img:hover {
 }
 
 .menu.active {
-  top: 185%;
+  top: 205%;
   width: 95vw;
   opacity: 1;
   -webkit-transform: translate(-50%, -50%) scale(1);
@@ -473,7 +478,7 @@ select {
 }
 
 .ingredientSection {
-  height: 130vh;
+  height: 170vh;
   background-image: url(../assets/ingredientsBackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -506,6 +511,39 @@ label, .submitButton {
 .submitButton {
   margin-top: 10px;
   background-color: red;
+}
+
+.recipeDisplay {
+  width: 75%;
+  margin: 20px auto;
+}
+
+.recipe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+  border: 5px solid red;
+  border-radius: 10px;
+  background: white;
+}
+
+.recipeImgContainer img {
+  max-width: 35%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.ingredients,
+.measurements {
+  padding: 20px;
+  width: 50%;
+}
+
+.measurements {
+  text-align: right;
 }
 
 footer {
@@ -562,6 +600,9 @@ footer p {
   .menu.active {
     top: 290%;
   }
+  .recipeImgContainer img {
+    max-width: 55%;
+  }
 }
 @media (max-width: 665px) {
   header .textContainer {
@@ -598,6 +639,9 @@ footer p {
   }
   .menu.active {
     top: 400%;
+  }
+  .recipeDisplay {
+    width: 95%;
   }
 }
 @media (max-width: 520px) {

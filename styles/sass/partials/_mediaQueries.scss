@@ -53,6 +53,9 @@
     .menu.active {
             top: 290%;
         }
+    .recipeImgContainer img {
+        max-width: 55%;
+    }
 
 
 }
@@ -101,6 +104,9 @@
     .menu.active {
             top: 400%;
         }
+    .recipeDisplay {
+        width: 95%;
+    }
 }
 
 
@@ -117,4 +123,5 @@
             font-size: 2rem;
         }
     }
+    
 }
