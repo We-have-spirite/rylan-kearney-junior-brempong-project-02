@@ -151,7 +151,7 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     
     
     // 2a: Store url = new URL(Endpoint)
-    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007`);
+    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=17226`);
     
     
     // 2b: Fetch(url) 
@@ -165,26 +165,30 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     })
     .then(data => {
         const array = data.drinks;
+        // console.log(data.drinks);
         // empty out what is currently in the ul
         document.querySelector('#ingredientDisplay').innerHTML = ``;
         // // display the content to the page
         drinksApp.displayRecipes(array);
+        console.log(array);
     })
     
 }
 
 
 
+
+
 // Getting the user input
 
-drinksApp.getIngredients = (item) => {
+drinksApp.getIngredients = () => {
 
     const choice = document.querySelector('.drinkChoice');
 
     choice.addEventListener(`submit`, function(event) {
 
         event.preventDefault();
-        //const selection = this.target;
+        // const selection = this.target;
         const userInput = document.querySelector('input');
         const drinkIDInput = userInput.value;
         userInput.value = '';
@@ -192,13 +196,12 @@ drinksApp.getIngredients = (item) => {
         drinksApp.searchDrink(userInput);
 
 
-        if(drinkIDInput) {           
+        if (drinkIDInput) {           
             // console.log("Test");
-            drinksApp.searchDrink();
-            
-
-
-            
+            drinksApp.searchDrink();  
+            console.log("User has submitted something");          
+        } else {
+            console.log("Empty String");
         }
 
     });
@@ -210,20 +213,20 @@ drinksApp.getIngredients = (item) => {
 //Step 3: Displaying the drinks to the page:
 drinksApp.displayRecipes = (recipe) => {
         
-    recipe.forEach(drinkRecipe => {
-        console.log(drinkRecipe);
+    recipe.forEach(function(drinkRecipe) {
+        // console.log(drinkRecipe);
 
         // Create p element for ingredients
         const ingredients = document.createElement(`p`);
-        ingredients.innerText = recipe.strIngredient1;
+        ingredients.innerText = drinkRecipe.strIngredient1;
 
         // Create p element for measurements
         const measurements = document.createElement(`p`);
-        measurements.innerText = recipe.strMeasure;
+        measurements.innerText = drinkRecipe.strMeasure1;
 
         // Create p element for instructions
         const instructions = document.createElement(`p`);
-        instructions.innerText = recipe.strInstructions;
+        instructions.innerText = drinkRecipe.strInstructions;
 
         // create div container & append
         const recipeContainer = document.createElement(`div`);
