@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do you have "Spirite?"</title>
+    <title>Do you have "Spirit?"</title>
 
     <link rel="stylesheet" href="styles/styles.css">
 
@@ -33,7 +33,7 @@
 
             <!-- Text Container Starts -->           
             <div class="textContainer">
-                <h1>Are you in the Holiday "Spirite?"</h1>
+                <h1>Are you in the Holiday "Spirit?"</h1>
                 <h2>Take a look and see what classic cockail fits your needs this Holiday Season</h2>
             </div>
             <!-- Text Container Ends -->
@@ -42,11 +42,11 @@
             <div class="ulElement">
 
                 <li>
-                    <a href="#FormElementButton" class="greenButton">Check out the Drink Options!</a>
+                    <a href="#find" class="greenButton">Check out the Drink Options!</a>
                 </li>
 
                 <li>
-                    <a href="#" class="redButton">Recipes</a>
+                    <a href="#ingredientSection" class="redButton">Recipes</a>
                 </li>
                 
             </div>
@@ -58,22 +58,72 @@
     </header>
     <!-- Header Element Ends -->
 
-    <section class="formPage">
+    <!-- Section for pop-up form starts -->
+    <section class="popUpForm" id="popUpForm">
 
-    <!-- Note to Rylan: All form html goes here!! -->
+        <!-- Div for center button starts -->
+        <div class="centerButton">
+            <button id="find">Find your Cocktail</button>
+        </div>
+        <!-- Div for center button ends -->
+
+        <!-- Div for menu starts -->
+        <div class="menu">
+
+            <!-- Div for close button begins -->
+            <div class="closeButton">&times;</div>
+            <!-- Div for close button ends -->
+
+            <!-- Div for form begins -->
+            <div class="form">
+
+                <h2>Get into the Spirit:</h2>
+                <form action="">
+                    <label for="spirit">Select one:</label>
+                    <select name="spirit" id="spirit">
+                    <option value="vodka">Vodka</option>
+                    <option value="rum">Rum</option>
+                    <option value="gin">Gin</option>
+                    <option value="bourbon">Bourbon</option>
+                    <option value="Scotch">Scotch</option>
+                    <option value="tequila">Tequila</option>
+                    </select>
+                </form>
 
 
+            </div>
+            <!-- Div for form begins -->
+            
+            <ul id="drinkDisplay" class="drinkDisplay"></ul>
 
+        </div>
+        <!--Div for menu ends-->
+    </section>
+
+    <section class="ingredientSection" id="ingredientSection">
+
+        <form action="#" method="#" class="drinkChoice" name="drinkChoice">
+
+            <label for="drinkChoice">What drink recipe would you like?:</label><br>
+            <input type="text" class="drinkChoice" id="drinkChoice" name="drinkChoice" placeholder="please use ID number from the above menu "><br>
+            <button class="submitButton" type="submit">Search Recipe</button>
+          
+          </form>
+
+          <ul id="recipeDisplay" class="recipeDisplay">
+              
+          </ul>
 
     </section>
 
+
     <footer>
-        <p>Property of Juno College</p>
+        <p>Property of Juno College 2022 | Created by Junior Brempong & Rylan Kearney </p>
     </footer>
 
 
 
-<script src="./script.js"></script>
+<script src="./scripts/script.js"></script>
 
 </body>
 </html>

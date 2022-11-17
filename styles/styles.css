@@ -245,6 +245,11 @@ button {
   text-transform: uppercase;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 h1, h2 {
   color: white;
 }
@@ -257,10 +262,10 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 110vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
 header .imgContainer {
   width: 8%;
   -webkit-transition: all 0.2s ease-in-out;
@@ -277,11 +282,12 @@ header img {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   border-radius: 8px;
+  width: 140%;
 }
-
 header h1 {
   font-family: "Satisfy", cursive;
   font-size: 7.5rem;
+  margin-top: 20px;
   margin-bottom: 0;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -294,10 +300,12 @@ header h2 {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+
 header .ulElement {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 15px;
 }
 header .ulElement ul {
   list-style: none;
@@ -306,11 +314,11 @@ header .ulElement li {
   text-decoration: none;
   list-style: none;
   margin-right: 25px;
-  margin-top: 15px;
+  margin-top: 30px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-header .ulElement li a {
+header .ulElement a {
   color: white;
   font-size: 1.25rem;
   font-family: "Source Sans Pro", sans-serif;
@@ -333,33 +341,346 @@ header h1:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
 header h2:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
 header li:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
 header img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.formPage {
-  height: 100vh;
+.popUpForm {
+  height: 195vh;
   background: rgb(12, 247, 51);
   background: linear-gradient(249deg, rgba(12, 247, 51, 0.9948179956) 0%, rgb(219, 37, 37) 25%, rgb(30, 198, 57) 49%, rgb(219, 37, 37) 75%, rgb(12, 247, 51) 100%);
+  border-radius: 10px;
+  border: 3px solid #d60c0c;
+}
+
+.popUpForm {
+  margin: 0px;
+  padding: 0px;
+}
+
+.centerButton {
+  position: absolute;
+  top: 195%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.centerButton #find {
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.centerButton:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1.25);
+          transform: translate(-50%, -50%) scale(1.25);
+  width: 400px;
+  padding: 20px 30px;
+  background: #fff;
+  border-radius: 10px;
+  border: 3px solid #d60c0c;
+  -webkit-transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms, -webkit-transform 20ms ease-in-out 0ms;
+}
+.menu .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background: #d60c0c;
+  color: #fff;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.menu h2 {
+  color: #d60c0c;
+}
+.menu p {
+  color: #d60c0c;
+  font-size: 0.8rem;
+}
+
+.menu.active {
+  top: 200%;
+  width: 95vw;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, -webkit-transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
+  transition: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms, -webkit-transform 20ms ease-in-out 0ms;
+}
+
+.form {
+  margin: 15px 0;
+}
+.form h2 {
+  text-align: center;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+form {
+  text-align: center;
+}
+form label {
+  font-size: 20px;
+}
+
+select {
+  padding: 5px;
+  width: 50%;
+}
+
+#drinkDisplay {
+  padding: 20px;
+}
+
+.cocktails {
+  padding: 20px;
+}
+
+#drinkDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#drinkDisplay img {
+  height: 200px;
+}
+
+.ingredientSection {
+  height: 170vh;
+  background-image: url(../assets/ingredientsBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.ingredientSection {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 28%;
+}
+
+label, .submitButton {
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+#drinkChoice {
+  margin-top: 20px;
+  width: 400px;
+}
+
+.submitButton {
+  margin-top: 10px;
+  background-color: red;
+}
+
+.recipeDisplay {
+  width: 45%;
+  margin: 20px auto;
+}
+.recipeDisplay h2 {
+  background: white;
+  width: 40%;
+  margin: 20px auto;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  border: 5px solid red;
+  border-radius: 10px;
+}
+
+.recipe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+  border: 5px solid red;
+  border-radius: 10px;
+  background: white;
+}
+.recipe p {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.recipeImgContainer img {
+  max-width: 35%;
+  margin: 20px auto;
+  border: 5px solid red;
+  border-radius: 10px;
+}
+
+.ingredients,
+.measurements {
+  padding: 20px;
+  width: 50%;
+}
+
+.measurements {
+  text-align: right;
 }
 
 footer {
   background-color: #ff3333;
   text-align: center;
   height: 25px;
+  overflow: hidden;
 }
 footer p {
   margin: 0;
   color: white;
   font-weight: 700;
   font-family: "Signika", sans-serif;
+}
+
+@media (max-width: 1200px) {
+  .headerElement {
+    height: 150vh;
+  }
+  .popUpForm {
+    height: 250vh;
+  }
+  .centerButton {
+    top: 250%;
+  }
+  .menu {
+    top: -250%;
+  }
+  .menu.active {
+    top: 250%;
+  }
+}
+@media (max-width: 1040px) {
+  .centerButton {
+    top: 270%;
+  }
+  .menu {
+    top: -270%;
+  }
+  .menu.active {
+    top: 270%;
+  }
+}
+@media (max-width: 845px) {
+  .popUpForm {
+    height: 280vh;
+  }
+  .centerButton {
+    top: 290%;
+  }
+  .menu {
+    top: -290%;
+  }
+  .menu.active {
+    top: 290%;
+  }
+  .recipeImgContainer img {
+    max-width: 55%;
+  }
+  .recipeDisplay {
+    width: 75%;
+  }
+}
+@media (max-width: 665px) {
+  header .textContainer {
+    width: 70%;
+  }
+  header .ulElement a {
+    font-size: 1rem;
+  }
+  header .imgContainer {
+    width: 20%;
+  }
+  .popUpForm {
+    height: 390vh;
+  }
+  .centerButton {
+    top: 350%;
+  }
+  .menu {
+    top: -350%;
+  }
+  .menu.active {
+    top: 350%;
+  }
+  .recipeDisplay h2 {
+    width: 70%;
+  }
+}
+@media (max-width: 620px) {
+  .popUpForm {
+    height: 500vh;
+  }
+  .centerButton {
+    top: 400%;
+  }
+  .menu {
+    top: -400%;
+  }
+  .menu.active {
+    top: 400%;
+  }
+  .recipeDisplay {
+    width: 95%;
+  }
+}
+@media (max-width: 520px) {
+  header h1 {
+    font-size: 5rem;
+  }
+  header .ulElement {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header header h2 {
+    font-size: 2rem;
+  }
 }

@@ -10,4 +10,10 @@
 
 @use "./partials/header";
 @use "./partials/form";
+@use "./partials/formStyles";
+@use "./partials/drinkDisplay";
+@use "./partials/ingredientSection";
 @use "./partials/footer";
+
+// Media Queries
+@use "./partials/mediaQueries";

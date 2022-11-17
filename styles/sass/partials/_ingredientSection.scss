@@ -1,0 +1,85 @@
+@use "./variables";
+
+.ingredientSection {
+    height: 170vh;
+    background-image: url(../assets/ingredientsBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
+
+.ingredientSection {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 28%;
+}
+
+
+label, .submitButton {
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+#drinkChoice {
+    margin-top: 20px;
+    width: 400px;
+}
+
+.submitButton {
+    margin-top: 10px;
+    background-color: red;
+}
+
+.recipeDisplay {
+    width: 45%;
+    margin: 20px auto;
+    h2 {
+        background: white;
+        width: 40%;
+        margin: 20px auto;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        border: 5px solid red;
+        border-radius: 10px;
+    }
+  }
+
+  .recipe {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 5px solid red;
+    border-radius: 10px;
+    background: white;
+    p {
+        width: 80%;
+        margin: 0 auto;
+    }
+  }
+
+  .recipeImgContainer img{
+    max-width: 35%;
+    margin: 20px auto;
+    border: 5px solid red;
+    border-radius: 10px;
+  }
+
+  .ingredients,
+  .measurements {
+      padding: 20px;
+      width: 50%;
+  }
+
+  .measurements {
+      text-align: right;
+  }
+
+ 

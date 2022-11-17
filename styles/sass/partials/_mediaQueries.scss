@@ -1,0 +1,133 @@
+@use "./variables";
+
+@media (max-width: 1200px) {
+    .headerElement {
+        height: 150vh;
+    }
+
+    .popUpForm {
+        height: 250vh;
+    }
+
+    .centerButton {
+    top: 250%;
+    }
+
+    .menu {
+        top: -250%;
+    }
+
+    .menu.active {
+        top: 250%;
+    }
+
+}
+
+@media (max-width: 1040px) {
+
+    .centerButton {
+        top: 270%;
+        }
+    
+    .menu {
+            top: -270%;
+        }
+    
+    .menu.active {
+            top: 270%;
+        }
+}
+
+@media (max-width: 845px) {
+    .popUpForm {
+        height: 280vh;
+    }
+    .centerButton {
+        top: 290%;
+        }
+    
+    .menu {
+            top: -290%;
+        }
+    
+    .menu.active {
+            top: 290%;
+        }
+    .recipeImgContainer img {
+        max-width: 55%;
+    }
+    .recipeDisplay {
+        width: 75%;
+    }
+
+
+}
+
+@media (max-width: 665px) {
+    header {
+        .textContainer {
+        width: 70%;
+        }
+        .ulElement a {
+        font-size: 1rem;
+        }
+        .imgContainer {
+        width: 20%;
+        }
+    }
+
+    .popUpForm {
+        height: 390vh;
+    }
+    .centerButton {
+        top: 350%;
+        }
+    
+    .menu {
+            top: -350%;
+        }
+    
+    .menu.active {
+            top: 350%;
+        }
+    .recipeDisplay h2 {
+        width: 70%;
+    }
+}
+
+@media (max-width: 620px) {
+    .popUpForm {
+        height: 500vh;
+    }
+    .centerButton {
+        top: 400%;
+        }
+    
+    .menu {
+            top: -400%;
+        }
+    
+    .menu.active {
+            top: 400%;
+        }
+    .recipeDisplay {
+        width: 95%;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    header{
+        h1 {
+            font-size: 5rem;
+        }
+        .ulElement {
+            flex-direction: column;
+        }
+        header h2 {
+            font-size: 2rem;
+        }
+    }
+
+}
