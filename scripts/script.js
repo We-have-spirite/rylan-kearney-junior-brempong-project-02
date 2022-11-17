@@ -215,6 +215,10 @@ drinksApp.displayRecipes = (recipe) => {
     recipe.forEach(function(drinkRecipe) {
         // console.log(drinkRecipe);
 
+        //Create h2 for drink title
+        const recipeName = document.createElement(`h2`);
+        recipeName.innerText = drinkRecipe.strDrink;
+
         // Create li elements for measurements
         const measurementsOne = document.createElement(`li`);
         measurementsOne.innerText = drinkRecipe.strMeasure1;
@@ -321,6 +325,7 @@ drinksApp.displayRecipes = (recipe) => {
 
 
         // Adding all the content we created to the ul
+        document.querySelector(`#recipeDisplay`).appendChild(recipeName);
         document.querySelector(`#recipeDisplay`).appendChild(recipeContainer);
         document.querySelector(`#recipeDisplay`).appendChild(recipeImgContainer);
 

@@ -514,8 +514,18 @@ label, .submitButton {
 }
 
 .recipeDisplay {
-  width: 75%;
+  width: 45%;
   margin: 20px auto;
+}
+.recipeDisplay h2 {
+  background: white;
+  width: 40%;
+  margin: 20px auto;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  border: 5px solid red;
+  border-radius: 10px;
 }
 
 .recipe {
@@ -529,11 +539,16 @@ label, .submitButton {
   border-radius: 10px;
   background: white;
 }
+.recipe p {
+  width: 80%;
+  margin: 0 auto;
+}
 
 .recipeImgContainer img {
   max-width: 35%;
-  padding: 10px;
-  margin: 0 auto;
+  margin: 20px auto;
+  border: 5px solid red;
+  border-radius: 10px;
 }
 
 .ingredients,
@@ -603,6 +618,9 @@ footer p {
   .recipeImgContainer img {
     max-width: 55%;
   }
+  .recipeDisplay {
+    width: 75%;
+  }
 }
 @media (max-width: 665px) {
   header .textContainer {
@@ -625,6 +643,9 @@ footer p {
   }
   .menu.active {
     top: 350%;
+  }
+  .recipeDisplay h2 {
+    width: 70%;
   }
 }
 @media (max-width: 620px) {

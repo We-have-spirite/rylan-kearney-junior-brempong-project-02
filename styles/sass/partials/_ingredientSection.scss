@@ -38,8 +38,18 @@ label, .submitButton {
 }
 
 .recipeDisplay {
-    width: 75%;
+    width: 45%;
     margin: 20px auto;
+    h2 {
+        background: white;
+        width: 40%;
+        margin: 20px auto;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        border: 5px solid red;
+        border-radius: 10px;
+    }
   }
 
   .recipe {
@@ -49,12 +59,17 @@ label, .submitButton {
     border: 5px solid red;
     border-radius: 10px;
     background: white;
+    p {
+        width: 80%;
+        margin: 0 auto;
+    }
   }
 
   .recipeImgContainer img{
     max-width: 35%;
-    padding: 10px;
-    margin: 0 auto;
+    margin: 20px auto;
+    border: 5px solid red;
+    border-radius: 10px;
   }
 
   .ingredients,
@@ -66,3 +81,5 @@ label, .submitButton {
   .measurements {
       text-align: right;
   }
+
+ 
