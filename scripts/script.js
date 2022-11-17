@@ -151,7 +151,7 @@ drinksApp.searchDrink = (drinkSearchQuery) => {
     
     
     // 2a: Store url = new URL(Endpoint)
-    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=17226`);
+    const url = new URL(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkSearchQuery}`);
     
     
     // 2b: Fetch(url) 
@@ -193,7 +193,7 @@ drinksApp.getIngredients = () => {
         const drinkIDInput = userInput.value;
         userInput.value = '';
         console.log(drinkIDInput)
-        drinksApp.searchDrink(userInput);
+        drinksApp.searchDrink(drinkIDInput);
 
 
         if (drinkIDInput) {           
@@ -206,7 +206,6 @@ drinksApp.getIngredients = () => {
 
     });
 }
-
 
 // Displaying to the page
 
