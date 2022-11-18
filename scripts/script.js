@@ -57,7 +57,6 @@ drinksApp.getDrink = (query) => {
         document.querySelector(`#drinkDisplay`).innerHTML = ``;
         // display the content to the page
         drinksApp.displayDrinks(first10);
-        console.log(first10)
     })
     
 }
@@ -69,7 +68,6 @@ drinksApp.getDrink = (query) => {
     drinksApp.displayDrinks = (cocktails) => {
         
         cocktails.forEach(drinks => {
-            console.log(drinks);
             // Create h2
             const name = document.createElement(`h2`);
             name.innerText = drinks.strDrink;
@@ -194,7 +192,6 @@ drinksApp.getIngredients = () => {
 
 
         if (drinkIDInput) {           
-            // console.log("Test");
             drinksApp.searchDrink();           
         } else {
         }
@@ -208,7 +205,6 @@ drinksApp.getIngredients = () => {
 drinksApp.displayRecipes = (recipe) => {
         
     recipe.forEach(function(drinkRecipe) {
-        // console.log(drinkRecipe);
 
         //Create h2 for drink title
         const recipeName = document.createElement(`h2`);
