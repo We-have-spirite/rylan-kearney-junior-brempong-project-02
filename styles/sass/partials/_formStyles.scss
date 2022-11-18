@@ -16,6 +16,10 @@
     }
 }
 
+.centerButton:hover {
+    transition: all 0.2s ease-in-out;
+}
+
 .menu {
     position: absolute;
     top: -150%;
@@ -53,7 +57,7 @@
 }
 
 .menu.active {
-    top: 205%;
+    top: 200%;
     width: 95vw;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
